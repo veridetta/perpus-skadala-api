@@ -86,6 +86,7 @@ class OrderController extends Controller
         $order->status = 'Submitted';
         $order->jam = $request->jam;
         $order->tanggal = $request->tanggal;
+        $order->tanggal_pengembalian = $request->tanggal_pengembalian;
         $tok=User::where('id','=',$request->user_id)->first();
         self::sendGCM("Order Submitted","Permintaan booking peminjaman buku telah dikirim", $tok->token);
         if ($order->save()) {

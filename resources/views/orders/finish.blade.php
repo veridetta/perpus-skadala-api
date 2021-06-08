@@ -28,6 +28,7 @@
                             <th>User</th>
                             <th>Buku</th>
                             <th>Waktu Booking</th>
+                            <th>Waktu Pengembalian</th>
                             <th>Dibuat</th>
                             <th>Status</th>
                         </tr>
@@ -37,6 +38,7 @@
                             <td>{{ $order->user->name }}</td>
                             <td>{{ $order->book->title }}</td>
                             <td>{{ $order->tanggal }} - {{ $order->jam }}</td>
+                            <td>{{ $order->tanggal_pengembalian }}</td>
                             <td>{{ $order->book->created_at }}</td>
                             <td class="text-center ">
                                 <div class="row justify-content-center">
