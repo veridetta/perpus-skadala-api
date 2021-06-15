@@ -40,6 +40,12 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
+                                    <strong>Kode Buku:</strong>
+                                    <input type="text" name="book_code" value="{{ $book->book_code }}" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
                                     <strong>Penulis:</strong>
                                     <input type="text" name="author" value="{{ $book->author }}" class="form-control" >
                                 </div>

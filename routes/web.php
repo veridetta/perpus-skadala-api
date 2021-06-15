@@ -36,7 +36,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('/finish', [App\Http\Controllers\OrderController::class, 'finish'])->name('orders.finish');
     Route::get('/proccess', [App\Http\Controllers\OrderController::class, 'proccess'])->name('orders.proccess');
     Route::get('firebase', [App\Http\Controllers\OrderController::class, 'firebase'])->name('orders.firebase');
-
+    Route::post('/notif/reminder', [App\Http\Controllers\OrderController::class, 'ReminderNotif'])->name('orders.ReminderNotif');
+    Route::get('/notif', [App\Http\Controllers\OrderController::class, 'notif'])->name('orders.notif');
     // // Route::middleware('auth')->group(function() {
         
     // // });

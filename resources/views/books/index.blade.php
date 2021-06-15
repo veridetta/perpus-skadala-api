@@ -28,6 +28,7 @@
                         <tr>
                             <th width="20px" class="text-center">No</th>
                             <th>Judul</th>
+                            <th>Kode</th>
                             <th>Penulis</th>
                             <th>Tahun Terbit</th>
                             <th width="280px"class="text-center">Action</th>
@@ -36,6 +37,7 @@
                         <tr>
                             <td class="text-center">{{ ++$i }}</td>
                             <td>{{ $book->title }}</td>
+                            <td>{{ $book->book_code }}</td>
                             <td>{{ $book->author }}</td>
                             <td>{{ $book->release_year }}</td>
                             <td class="text-center">

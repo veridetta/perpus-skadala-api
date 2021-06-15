@@ -44,6 +44,7 @@ class BookController extends Controller
             'author' => 'required',
             'image' => 'required',
             'category' => 'required',
+            'book_code' => 'required',
         ]);
 
         $result = $request->file('image')->storeOnCloudinary('books_cover');
@@ -57,6 +58,7 @@ class BookController extends Controller
             'cover_url' => $filePath,
             'cover_id' => $image_id,
             'category_id' => $request->category,
+            'book_code' => $request->book_code
         ]);
  
         return redirect()->route('books.index')

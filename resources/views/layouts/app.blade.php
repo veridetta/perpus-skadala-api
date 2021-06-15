@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('orders.finish') }}">Daftar Selesai</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('orders.notif') }}">Notif Manager</a>
+                        </li>
                         @endauth
                     </ul>
 

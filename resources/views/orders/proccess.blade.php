@@ -52,6 +52,13 @@
                                         <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Apakah Anda yakin ingin menyelesaikan data ini?')">Selesai</button>
                                     </form>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <form action="{{ route('orders.ReminderNotif',$order->id) }}" method="POST"style="display:inherit;">
+                                        @csrf
+                                        <input type="hidden" value="Remainder" name="status"/>
+                                        <input type="hidden" value="{{ $order->user_id }}" name="user_id"/>
+                                        <input type="hidden" value="Waktu Pinjammu Hampir Habis" name="title">
+                                        <input type="hidden" value="Jika melebihi waktu yang ditentukan, kamu harus membayar denda sebesar Rp. 5000 per buku" name="message">
+                                        <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('Apakah Anda yakin ingin mengirim notifikasi?')">Ingatkan</button>
                                 </div>
                                 
                             </td>

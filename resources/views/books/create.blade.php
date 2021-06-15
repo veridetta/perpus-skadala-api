@@ -39,6 +39,12 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
+                                    <strong>Kode Buku:</strong>
+                                    <input type="text" name="book_code" class="form-control" placeholder="Kode Buku">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
                                     <strong>Penulis:</strong>
                                     <input type="text" name="author" class="form-control" placeholder="Penulis">
                                 </div>

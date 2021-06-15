@@ -165,7 +165,7 @@ class OrderController extends Controller
         self::sendGCM("JUDUL","Haalloo","e07g2zpKQGi3GIYeen9mw5:APA91bFTAF-zO6OJvN6Js7XiTCd0244sKdS1X3eVbIuFAwS348L0IT4KCnrSX9JM_tpg12n1UfnYkjphp2ryQIA_qmoMDwxjUBVbzze5irJZn7VvEUwC6FOD-cFWVx4NB3Ols7_wfNNx");
     }
     function sendGCM($title,$message, $id) {
-$url = 'https://fcm.googleapis.com/fcm/send';
+        $url = 'https://fcm.googleapis.com/fcm/send';
         $FcmToken = $id;
           
         $serverKey = 'AAAAzZB-u6Y:APA91bFVDeGU-SHcTSsmpaawhkPXcaLREtJ8hqL_szo1KrxxWdMVrevpnz5S7zVTpIZZYwBt9VlYoNthgKAWC_QQ8TMfUz8tYsF_p-wKn7I_vttozBTjJ11gmCXK8EjK5ZFeDO2lfFux';
@@ -208,6 +208,18 @@ $url = 'https://fcm.googleapis.com/fcm/send';
 
         // FCM response
         //dd($result);        
-}
-
+    }
+    function ReminderNotif(Request $request){
+        $id=$request->user_id;
+        $title=$request->title;
+        $message=$request->message;
+        $tok=User::where('id','=',$request->user_id)->first();
+        self::sendGCM($title,$message,$tok->token);
+        return redirect()->route('orders.notif')
+                        ->with('success','Berhasil Mengirim Notifikasi');
+    }
+    function notif(){
+        $users = User::get();
+        return view('orders.notif',compact('users'));
+    }
 }
